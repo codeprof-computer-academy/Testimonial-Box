@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap rel="stylesheet"');
+
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: silver;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container{
+    width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-gap:20px;
+    box-sizing:border-box;
+    padding: 20px;
+}
+
+.container .box{
+    position: relative;
+    padding: 80px 40px 40px;
+    transition: 0.5s;
+    text-align: center;
+    background-color: #fff;
+
+}
+
+.container .box:hover{
+    background-color: darkcyan;
+    cursor: pointer;
+}
+
+.container .box p{
+    margin: 0;
+    padding: 0;
+    transition: 0.5s;
+    font-style: italic;
+}
+
+.container .box h4{
+    margin: 20px 0 0;
+    padding: 0;
+    transition: 0.5s;
+    font-size: 18px;
+    color:darkcyan;
+    font-weight: 700;
+    line-height: 20px;
+    text-transform: uppercase;
+}
+
+.container .box h4 span{
+    font-weight: 600;
+    font-size: 14px;
+    color:#c5c5c5;
+    transition: 0.5s;
+}
+
+.container .box:hover p,
+.container .box:hover h4,
+.container .box:hover h4 span{
+color:#fff;
+}
+
+.imgBox img{
+    width: 120px;
+    height: 120px;
+}
+
+
+.container .box .imgBox{
+    position: absolute;
+    top: -60px;
+    width:120px;
+    height:120px;
+    left:50%;
+    transform: translate(-50%);
+    border-radius: 50%;
+    overflow: hidden;
+    border:4px solid darkcyan;
+}
+
+
+.container .box:before{
+    content: '';
+    position: absolute;
+    top:20px;
+    right:40px;
+    width:80px;
+    height:80px;
+    background:url("quote.png");
+    background-size: cover;
+    opacity:0.05;
+    pointer-events:none;
+    transition: 0.5s;
+}
+
+
+.container .box:hover:before{
+    transform:translateY(-60px);
+    opacity: 1;
+}
+
+
+.container .box:after{
+    content: '';
+    position: absolute;
+    bottom:20px;
+    left:40px;
+    width:80px;
+    height:80px;
+    background:url("quote.png");
+    background-size: cover;
+    opacity:0.05;
+    pointer-events:none;
+    transition: 0.5s;
+    transform:rotate(180deg) translateY(0px);
+}
+
+
+.container .box:hover:after{
+    transform:rotate(180deg) translateY(-60px);
+    opacity: 1;
+}
+
+
+@media(max-width:768px){
+    .container .box{
+        margin-top:80px;
+    }
+}
